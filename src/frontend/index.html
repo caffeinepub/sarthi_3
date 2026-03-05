@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Sarthi - Your AI-powered career guidance companion for students" />
+
+    <!-- PWA Theme -->
+    <meta name="theme-color" content="#0d9488" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Apple PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Sarthi" />
+    <link rel="apple-touch-icon" href="/assets/generated/sarthi-icon-192.dim_192x192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/assets/generated/sarthi-icon-192.dim_192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/assets/generated/sarthi-icon-512.dim_512x512.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/generated/sarthi-icon-192.dim_192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/generated/sarthi-icon-512.dim_512x512.png" />
+
+    <title>Sarthi - Career Guidance</title>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .then(function (registration) {
+              // Registration successful
+            })
+            .catch(function (err) {
+              // Registration failed
+            });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

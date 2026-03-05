@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Deep Teal + Saffron/Amber palette */
+    --background: 0.97 0.008 95;
+    --foreground: 0.18 0.04 240;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 240;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 240;
+
+    /* Deep Teal primary */
+    --primary: 0.42 0.12 195;
+    --primary-foreground: 0.99 0 0;
+
+    /* Amber/Saffron secondary */
+    --secondary: 0.94 0.06 85;
+    --secondary-foreground: 0.25 0.06 50;
+
+    --muted: 0.93 0.01 220;
+    --muted-foreground: 0.52 0.03 220;
+
+    /* Amber accent */
+    --accent: 0.88 0.12 75;
+    --accent-foreground: 0.22 0.06 50;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.02 220;
+    --input: 0.88 0.02 220;
+    --ring: 0.42 0.12 195;
+
+    --chart-1: 0.42 0.12 195;
+    --chart-2: 0.72 0.16 75;
+    --chart-3: 0.55 0.14 160;
+    --chart-4: 0.65 0.18 30;
+    --chart-5: 0.48 0.16 280;
+
+    --sidebar: 0.25 0.06 195;
+    --sidebar-foreground: 0.95 0.02 195;
+    --sidebar-primary: 0.72 0.16 75;
+    --sidebar-primary-foreground: 0.18 0.04 50;
+    --sidebar-accent: 0.32 0.08 195;
+    --sidebar-accent-foreground: 0.95 0.02 195;
+    --sidebar-border: 0.32 0.08 195;
+    --sidebar-ring: 0.72 0.16 75;
+
+    /* Custom tokens */
+    --teal: 0.42 0.12 195;
+    --teal-light: 0.72 0.08 195;
+    --teal-dark: 0.28 0.1 195;
+    --amber: 0.72 0.16 75;
+    --amber-light: 0.88 0.12 75;
+    --amber-dark: 0.55 0.18 55;
+  }
+
+  .dark {
+    --background: 0.14 0.04 220;
+    --foreground: 0.95 0.01 220;
+
+    --card: 0.19 0.04 220;
+    --card-foreground: 0.95 0.01 220;
+
+    --popover: 0.22 0.04 220;
+    --popover-foreground: 0.95 0.01 220;
+
+    --primary: 0.62 0.14 195;
+    --primary-foreground: 0.1 0.04 220;
+
+    --secondary: 0.28 0.06 220;
+    --secondary-foreground: 0.95 0.01 220;
+
+    --muted: 0.24 0.04 220;
+    --muted-foreground: 0.65 0.03 220;
+
+    --accent: 0.72 0.16 75;
+    --accent-foreground: 0.12 0.04 50;
+
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 1 0 0 / 12%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.62 0.14 195;
+
+    --chart-1: 0.62 0.14 195;
+    --chart-2: 0.72 0.16 75;
+    --chart-3: 0.55 0.14 160;
+    --chart-4: 0.65 0.18 30;
+    --chart-5: 0.58 0.16 280;
+
+    --sidebar: 0.12 0.04 220;
+    --sidebar-foreground: 0.92 0.02 195;
+    --sidebar-primary: 0.72 0.16 75;
+    --sidebar-primary-foreground: 0.12 0.04 50;
+    --sidebar-accent: 0.2 0.06 220;
+    --sidebar-accent-foreground: 0.92 0.02 195;
+    --sidebar-border: 1 0 0 / 12%;
+    --sidebar-ring: 0.72 0.16 75;
+
+    --teal: 0.62 0.14 195;
+    --teal-light: 0.75 0.1 195;
+    --teal-dark: 0.42 0.12 195;
+    --amber: 0.72 0.16 75;
+    --amber-light: 0.85 0.12 75;
+    --amber-dark: 0.55 0.18 55;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Nunito", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-teal {
+    background: linear-gradient(
+      135deg,
+      oklch(0.42 0.12 195),
+      oklch(0.35 0.1 210)
+    );
+  }
+  .gradient-amber {
+    background: linear-gradient(
+      135deg,
+      oklch(0.72 0.16 75),
+      oklch(0.65 0.18 55)
+    );
+  }
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      oklch(0.28 0.1 195) 0%,
+      oklch(0.42 0.12 195) 50%,
+      oklch(0.55 0.18 55) 100%
+    );
+  }
+  .text-gradient-teal {
+    background: linear-gradient(
+      135deg,
+      oklch(0.42 0.12 195),
+      oklch(0.62 0.14 195)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.72 0.08 195) transparent;
+  }
+}
